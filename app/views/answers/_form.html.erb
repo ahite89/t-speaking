@@ -1,0 +1,21 @@
+<%= form_for [@question, @answer] do |f| %>
+<% if @answer.errors.any? %>
+<div id="error_explanation">
+  <h2 class="formerrors"><%= pluralize(@answer.errors.count, "error") %> prohibited this review from being saved:</h2>
+  <ul>
+    <% @answer.errors.full_messages.each do |message| %>
+    <li class="formerrors"><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div id="answer-content">
+  <%= f.text_area :content %>
+</div>
+
+<div id="answer-button">
+  <%= f.submit "Submit Answer", class: "button small radius" %>
+</div>
+
+<% end %>

@@ -1,0 +1,52 @@
+<div>
+  <% @categories.each do |category| %>
+    <ul>
+      <li class="category"><%= link_to category.name, category_path(category) %></li>
+    </ul>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="large-3 columns">
+    <h6>category 10</h6>
+  </div>
+  <div class="large-3  columns">
+    <h6>category 9</h6>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-6 columns">
+    <h6>category 4</h6>
+  </div>
+  <div class="large-2 columns">
+    <h6>category 6</h6>
+  </div>
+  <div class="large-4 columns">
+    <h6>category 3</h6>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-4 columns">
+    <h6>category 1</h6>
+  </div>
+  <div class="large-4 columns">
+    <%= link_to image_tag("clef.png"), chords_path %>
+  </div>
+  <div class="large-4 columns">
+    <h6>category 2</h6>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-6 columns">
+    <h6>category 5</h6>
+  </div>
+  <div class="large-3 columns">
+    <h6>category 7</h6>
+  </div>
+  <div class="large-3 columns">
+    <h6>category 8</h6>
+  </div>
+</div>

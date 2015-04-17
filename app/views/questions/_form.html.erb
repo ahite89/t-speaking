@@ -1,0 +1,30 @@
+<%= form_for [@category, @question] do |f| %>
+<% if @question.errors.any? %>
+<div id="error_explanation">
+  <h2 class="formerrors"><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+  <ul>
+    <% @question.errors.full_messages.each do |message| %>
+    <li class="formerrors"><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= f.text_field :title, placeholder: "Title" %><br>
+
+<%= f.text_area :description, placeholder: "Description" %><br>
+
+<%= f.hidden_field :category_id %><br>
+<%= f.hidden_field :category_id, value: Category.all.map { |c| [c.name, c.id] } %>
+
+<%= f.text_field :tag_list, placeholder: "Tags (separated by commas)" %><br>
+
+<%= f.label :score %><br>
+<%= f.file_field :score %>
+
+<%= f.label :audio %><br>
+<%= f.file_field :audio %>
+
+<%= f.submit "Submit Question", class: "button small radius" %>
+
+<% end %>

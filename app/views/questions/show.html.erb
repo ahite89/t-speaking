@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="large-12 columns" id="question-title">
+    <h3><%= best_in_place @question, :title %></h3><br>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns" id="question-description">
+    <h6><%= best_in_place @question, :description, type: :textarea %></h6>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <div id="score"><%= image_tag(@question.score) %></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns" id="answer-form">
+    <%= render "answers/form" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="panel">
+      <div class="answers">
+        <% @question.answers.each do |answer| %>
+          <%= best_in_place answer, :content, type: :textarea %> <span><%= link_to "delete", answer_path(answer), method: :delete %><span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

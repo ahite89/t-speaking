@@ -1,0 +1,13 @@
+input.button.small.radius {
+  padding-top: 0.875rem;
+  padding-right: 1.75rem;
+  padding-bottom: 0.9375rem;
+  padding-left: 1.75rem;
+  font-size: 10px;
+  color: #03EAFF;
+  background-color: #9500FF;
+}
+
+div#answer-button {
+  text-align: center;
+}

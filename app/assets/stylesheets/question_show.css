@@ -1,0 +1,27 @@
+div#score {
+  width: 6em;
+  height: 6em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-color: black;
+  border-radius: 0.5em
+}
+
+div.answers ul li span a {
+  font-size: 10px;
+}
+
+div#question-title {
+  text-align: center;
+  padding-top: 4em;
+}
+
+div#question-description {
+  padding-bottom: 3em;
+}
+
+div#answer-form {
+  padding-top: 3em;
+}

@@ -1,0 +1,53 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+ *= require tags
+
+ */
+ div.contain-to-grid.sticky,
+ nav.top-bar,
+ li.has-form,
+ .top-bar-section li:not(.has-form) a:not(.button),
+ .top-bar-section ul li, .top-bar-section .has-form
+ {
+   background-color: #FFFFFF;
+ }
+
+ .top-bar .name h1 a, .top-bar .name h2 a, .top-bar .name h3 a, .top-bar .name h4 a, .top-bar .name p a, .top-bar .name span a {
+   font-weight: normal;
+   color: black;
+   padding: 0 0.9375rem;
+   font-size: 12px;
+   float: center;
+ }
+
+ .top-bar-section ul li > a {
+   color: black;
+   padding: 100px 0 12px 0;
+   padding-left: 0.9375rem;
+   font-family: sans-serif;
+   font-size: 12px;
+ }
+
+ nav.top-bar {
+   text-align: center;
+ }
+ section.top-bar-section {
+   display: inline-block;
+ }
+
+ .top-bar-section ul.title-area {
+   text-align: center;
+ }

@@ -7,15 +7,26 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+
+# json = Chord.save_data_from_api
+# new_chord_array = []
+# json.each { |row| new_chord_array << [row["chord_HTML"], row["probability"]] }
+# new_chord_array.each { |chord| Chord.create(first_chord: chord.first, first_chord_probability: chord.last) }
+
+
+
 Category.find_or_create_by!(name: "Key")
+Category.find_or_create_by!(name: "Intervals")
 Category.find_or_create_by!(name: "Chords")
 Category.find_or_create_by!(name: "Rhythm")
-Category.find_or_create_by!(name: "Intervals")
 Category.find_or_create_by!(name: "Dynamics")
+Category.find_or_create_by!(name: "Analysis")
+Category.find_or_create_by!(name: "Serialism")
 Category.find_or_create_by!(name: "Counterpoint")
 Category.find_or_create_by!(name: "Modulation")
-Category.find_or_create_by!(name: "Scales and Modes")
-Category.find_or_create_by!(name: "Form and Structure")
+Category.find_or_create_by!(name: "Scales")
+Category.find_or_create_by!(name: "Modes")
+Category.find_or_create_by!(name: "Form")
 
 
 user = User.find_by(email: "musicguy@gmail.com")

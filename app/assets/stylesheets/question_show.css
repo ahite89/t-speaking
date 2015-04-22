@@ -1,3 +1,13 @@
+@import url(http://fonts.googleapis.com/css?family=Handlee);
+
+div#question-description h6 {
+  font-family: 'Handlee';
+}
+
+div#question-title h3 {
+  font-family: 'Handlee';
+}
+
 div#score {
   width: 6em;
   height: 6em;
@@ -9,13 +19,30 @@ div#score {
   border-radius: 0.5em
 }
 
-div.answers ul li span a {
+audio {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 100px;
+}
+
+#popup {
+  height: 600px;
+  width: 600px;
+  display: none;
+  left: 190px;
+  bottom: -270px;
+  position: absolute;
+  z-index: 1000;
+}
+
+div.answers span a {
   font-size: 10px;
 }
 
 div#question-title {
   text-align: center;
   padding-top: 4em;
+  top: 50px;
 }
 
 div#question-description {
@@ -24,4 +51,21 @@ div#question-description {
 
 div#answer-form {
   padding-top: 3em;
+}
+
+div.panel {
+  padding-top: 1em;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#flat a img {
+  width: 20px;
+  height: 20px;
+}
+
+div#sharp a img {
+  width: 20px;
+  height: 20px;
 }

@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
+  get 'tags/:tag', to: 'categories#show', as: :tag
+
   root 'categories#index'
 
   resources :categories, only: [:index, :show, :edit, :update] do
@@ -16,7 +15,13 @@ Rails.application.routes.draw do
     resources :scores, only: [:index, :show]
   end
 
-  resources :answers, only: [:edit, :update, :destroy]
+  resources :answers do
+    member do
+      put "like", to: "answers#upvote"
+      put "dislike", to: "answers#downvote"
+    end
+  end
+
 
   resources :chords, only: [:index]
 end

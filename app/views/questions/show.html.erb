@@ -1,20 +1,38 @@
 <div class="row">
   <div class="large-12 columns" id="question-title">
-    <h3><%= best_in_place @question, :title %></h3><br>
+    <h3><%= @question.title %></h3><br>
   </div>
 </div>
 
 <div class="row">
   <div class="large-12 columns" id="question-description">
-    <h6><%= best_in_place @question, :description, type: :textarea %></h6>
+    <h6><%= @question.description %></h6>
   </div>
 </div>
 
 <div class="row">
   <div class="large-12 columns">
     <div id="score"><%= image_tag(@question.score) %></div>
+    <div id="popup"><%= image_tag(@question.score) %></div>
   </div>
 </div>
+
+<div class="row">
+  <div class="large-4 columns">
+    <p></p>
+  </div>
+  <div class="large-4 columns">
+    <audio controls>
+      <source src="<%= @question.audio %>">
+    </audio>
+  </div>
+  <div class="large-4 columns">
+    <p></p>
+  </div>
+</div>
+
+<canvas id="staff" width="50" height="50">
+</canvas>
 
 <div class="row">
   <div class="large-12 columns" id="answer-form">
@@ -24,12 +42,16 @@
 
 <div class="row">
   <div class="large-12 columns">
-    <div class="panel">
       <div class="answers">
         <% @question.answers.each do |answer| %>
-          <%= best_in_place answer, :content, type: :textarea %> <span><%= link_to "delete", answer_path(answer), method: :delete %><span>
+          <div>
+            <div id="sharp"><%= link_to image_tag("sharp.gif"), like_answer_path(answer), method: :put %></div>
+              <%= answer.score %>
+              <%= best_in_place answer, :content, type: :textarea %> <span><%= link_to "delete", answer_path(answer), method: :delete %><span>
+            <div id="flat"><%= link_to image_tag("flat.png"), dislike_answer_path(answer), method: :put %></div>
+            <hr/>
+          </div>
         <% end %>
       </div>
-    </div>
   </div>
 </div>

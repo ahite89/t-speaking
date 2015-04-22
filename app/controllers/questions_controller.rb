@@ -2,7 +2,12 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @questions = Question.all
+    if params[:query]
+      @questions = Question.page(params[:page]).per(20).search(params[:query])
+      flash.now[:notice] = @questions.search_message
+    else
+      @questions = Question.page(params[:page]).per(20).order(:name)
+    end
   end
 
   def show
@@ -37,11 +42,11 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-    respond_to do |format|
-      if @question.update(question_params)
-        format.html { redirect_to(@question) }
-        format.json { render json: @question }
-      end
+
+    if @question.update(question_params)
+      redirect_to category_path(@question.category)
+    else
+      render :edit
     end
   end
 
@@ -50,12 +55,12 @@ class QuestionsController < ApplicationController
     if @question.destroy
       flash[:notice] = "Question deleted!"
     else
-      flash[:notice] = "Can't delete!"
+      flash[:notice] = "You must be logged in to do that!"
     end
     redirect_to category_path(@question.category)
   end
 
   def question_params
-    params.require(:question).permit(:title, :description, :score, :audio, :category_id)
+    params.require(:question).permit(:title, :description, :score, :audio)
   end
 end

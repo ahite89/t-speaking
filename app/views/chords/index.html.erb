@@ -1,1 +1,7 @@
 <h4>Chord Progressions</h4>
+
+<% @chords.each do |chord| %>
+  <% if chord.first_chord_probability > 0.03 %>
+    <%= chord.first_chord %>
+  <% end %>
+<% end %>

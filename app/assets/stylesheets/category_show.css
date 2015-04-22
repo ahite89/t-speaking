@@ -1,3 +1,12 @@
-div h1.category-name {
-  font-family: PT sans;
+@import url(http://fonts.googleapis.com/css?family=Handlee);
+
+div h1.name {
+  font-family: 'Handlee';
+  text-align: center;
+}
+
+div li#new-question {
+  font-family: 'Handlee';
+  padding-top: 25px;
+  font-size: 12px;
 }

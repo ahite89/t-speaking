@@ -16,6 +16,10 @@
  *= require tags
 
  */
+ body.home {
+   background-image: url("landing3.png");
+ }
+
  div.contain-to-grid.sticky,
  nav.top-bar,
  li.has-form,
@@ -23,14 +27,6 @@
  .top-bar-section ul li, .top-bar-section .has-form
  {
    background-color: #FFFFFF;
- }
-
- .top-bar .name h1 a, .top-bar .name h2 a, .top-bar .name h3 a, .top-bar .name h4 a, .top-bar .name p a, .top-bar .name span a {
-   font-weight: normal;
-   color: black;
-   padding: 0 0.9375rem;
-   font-size: 12px;
-   float: center;
  }
 
  .top-bar-section ul li > a {
@@ -44,10 +40,8 @@
  nav.top-bar {
    text-align: center;
  }
+
  section.top-bar-section {
    display: inline-block;
- }
-
- .top-bar-section ul.title-area {
    text-align: center;
  }

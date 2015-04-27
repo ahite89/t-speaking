@@ -223,9 +223,9 @@
                 <%= best_in_place answer, :content, type: :textarea %> <span><%= link_to "delete", answer_path(answer), method: :delete %><span>
               <div id="flat"><%= link_to image_tag("flat.png"), dislike_answer_path(answer), method: :put %></div>
               <% if answer.user.username == nil %>
-                <div id="no-useranswer">theorized by anonymous at <%= answer.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
+                <div id="no-useranswer">theorized by anonymous on <%= answer.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
               <% else %>
-                <div id="useranswer">theorized by <%= answer.user.username %> at <%= answer.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
+                <div id="useranswer">theorized by <%= answer.user.username %> on <%= answer.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
               <% end %>
               <hr/>
             </div>

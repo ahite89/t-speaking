@@ -6,6 +6,12 @@ div#box {
   height: 400px;
 }
 
+.falling-notes {
+  position: absolute;
+  left: 900px;
+  top: -70px;
+}
+
 div#questions ul li a {
   font-size: 10px;
   padding-top: 10px;
@@ -20,11 +26,13 @@ div#questions p strong a {
 #username {
   font-family: "Josefin Sans";
   font-size: 14px;
+  padding-bottom: 5px;
 }
 
 #no-username {
   font-family: "Josefin Sans";
   font-size: 14px;
+  padding-bottom: 5px;
 }
 
 div#tags {

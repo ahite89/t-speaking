@@ -1,8 +1,4 @@
 $(document).ready(function(){
-  $('#logo a').fadeIn(2000);
-});
-
-$(document).ready(function(){
   $('.category-name:nth-child(1)').hover(function() {
     $('.category-name:nth-child(1)').addClass('transition');
 

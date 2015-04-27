@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="large-3 columns ">
+  <div class="large-3 columns">
     <div>
       <% @questions.each do |question| %>
         <% if question.tags == nil %>
@@ -9,6 +9,7 @@
         <% end %>
       <% end %>
     </div>
+    <%= image_tag("notes.gif", :class => "falling-notes") %>
   </div>
 
 
@@ -18,9 +19,9 @@
         <div class="large-10 columns" id="questions">
           <p><strong><%= link_to question.title, question_path(question) %></strong></p>
           <% if question.user.username == nil %>
-            <div id="no-username">asked by anonymous at <%= question.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
+            <div id="no-username">asked by anonymous on <%= question.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
           <% else %>
-            <div id="username">asked by <%= question.user.username %> at <%= question.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
+            <div id="username">asked by <%= question.user.username %> on <%= question.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
           <% end %>
           <% if question.tags == nil %>
             <div id="no-tag"></div>

@@ -1,14 +1,30 @@
 @import url(http://fonts.googleapis.com/css?family=Handlee);
 
-div.category-name {
+#title-1 {
   font-family: 'Handlee';
+  position: relative;
+  right: 400px;
+  bottom: 150px;
+  font-size: 40px;
+  background: linear-gradient(330deg, #e05252 0%, #4285F4 25%, purple 50%, #9952e0 75%, #4285F4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.transition {
-  -webkit-transform: scale(1.6);
-  -moz-transform: scale(1.6);
-  -o-transform: scale(1.6);
-  transform: scale(1.6);
+#title-2 {
+  font-family: 'Handlee';
+  position: relative;
+  left: 400px;
+  bottom: 350px;
+  font-size: 40px;
+  color: linear-gradient(to right, purple , #4285F4);
+  background: linear-gradient(330deg, #e05252 0%, purple 25%, #4285F4 50%, #9952e0 75%, #4285F4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+div.category-name {
+  font-family: 'Handlee';
 }
 
 div.row h6 {
@@ -16,8 +32,48 @@ div.row h6 {
   padding-top: 5em;
 }
 
+.fadeIn {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  -o-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  -o-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+}
+
+.fadeIn-1s {
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  -o-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fadeIn-3s {
+  -webkit-animation-duration:3s;
+  -moz-animation-duration:3s;
+  -o-animation-duration:3s;
+  animation-duration:3s;
+}
+
+.fadeIn-Delay-1s {
+  -webkit-animation-delay:1s;
+  -moz-animation-delay:1s;
+  -o-animation-delay:1s;
+  animation-delay:1s;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-o-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
 div#logo a {
   margin-left: 375px;
+  position: relative;
+  bottom: 163px;
 }
 
 div#logo a:hover + #information{

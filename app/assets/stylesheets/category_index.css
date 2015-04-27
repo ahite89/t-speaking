@@ -1,10 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Handlee);
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script);
 
 #title-1 {
-  font-family: 'Handlee';
+  font-family: 'Dancing Script';
   position: relative;
-  right: 400px;
-  bottom: 150px;
+  right: 360px;
+  bottom: 130px;
   font-size: 40px;
   background: linear-gradient(330deg, #e05252 0%, #4285F4 25%, purple 50%, #9952e0 75%, #4285F4 100%);
   -webkit-background-clip: text;
@@ -12,7 +13,7 @@
 }
 
 #title-2 {
-  font-family: 'Handlee';
+  font-family: 'Dancing Script';
   position: relative;
   left: 400px;
   bottom: 350px;

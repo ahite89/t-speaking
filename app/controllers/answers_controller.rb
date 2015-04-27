@@ -19,7 +19,7 @@ class AnswersController < ApplicationController
   end
 
   def edit
-    @answer = current_user.reviews.find(params[:id])
+    @answer = current_user.answers.find(params[:id])
   end
 
   def update
@@ -36,13 +36,14 @@ class AnswersController < ApplicationController
   def destroy
     @answer = current_user.answers.find(params[:id])
     @question = @answer.question
-      if @answer.destroy
-        flash[:notice] = "Your answer was deleted!"
-      else
-        flash[:notice] = "Answer not deleted"
-      end
-      redirect_to question_path(@question)
+
+    if @answer.destroy
+      flash[:notice] = "Your answer was deleted!"
+    else
+      flash[:notice] = "Answer not deleted"
     end
+    redirect_to question_path(@question)
+  end
 
   def upvote
     @answer = Answer.find(params[:id])
@@ -57,7 +58,7 @@ class AnswersController < ApplicationController
     @question = @answer.question
     redirect_to question_path(@question)
   end
-
+  
   private
 
   def answer_params

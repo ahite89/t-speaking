@@ -17,8 +17,7 @@ div.row h6 {
 }
 
 div#logo a {
-  margin-left: 350px;
-  display:none;
+  margin-left: 375px;
 }
 
 div#logo a:hover + #information{
@@ -28,7 +27,7 @@ div#logo a:hover + #information{
 #information{
   display: none;
   position: absolute;
-  left: 410px;
+  left: 445px;
   bottom: 150px;
   width: 140px;
   height: 25px;
@@ -48,7 +47,7 @@ div.circle-container {
 .category-name:nth-child(1) {
   position: absolute;
   top: 300px;
-  left: 330px;
+  left: 365px;
   font-size: 16px;
   z-index: 1000;
 }
@@ -56,7 +55,7 @@ div.circle-container {
 .category-name:nth-child(2) {
   position: absolute;
   top: 140px;
-  left: 400px;
+  left: 435px;
   font-size: 16px;
   z-index: 1000;
 }
@@ -64,7 +63,7 @@ div.circle-container {
 .category-name:nth-child(3) {
   position: absolute;
   top: 220px;
-  left: 340px;
+  left: 375px;
   font-size: 16px;
   z-index: 1000;
 }
@@ -72,7 +71,7 @@ div.circle-container {
 .category-name:nth-child(4) {
   position: absolute;
   top: 100px;
-  left: 530px;
+  left: 565px;
   font-size: 16px;
   z-index: 1000;
 }
@@ -80,7 +79,7 @@ div.circle-container {
 .category-name:nth-child(5) {
   position: absolute;
   top: 380px;
-  left: 320px;
+  left: 355px;
   font-size: 16px;
   z-index: 1000;
 }
@@ -88,7 +87,7 @@ div.circle-container {
 .category-name:nth-child(6) {
   position: absolute;
   top: 140px;
-  left: 660px;
+  left: 695px;
   font-size: 16px;
   z-index: 1000;
 }
@@ -96,7 +95,7 @@ div.circle-container {
 .category-name:nth-child(7) {
   position: absolute;
   top: 220px;
-  left: 715px;
+  left: 750px;
   font-size: 16px;
   z-index: 1000;
 }
@@ -104,7 +103,7 @@ div.circle-container {
 .category-name:nth-child(8) {
   position: absolute;
   top: 500px;
-  left: 505px;
+  left: 540px;
   font-size: 16px;
   z-index: 1000;
 }
@@ -112,7 +111,7 @@ div.circle-container {
 .category-name:nth-child(9) {
   position: absolute;
   top: 380px;
-  left: 720px;
+  left: 755px;
   font-size: 16px;
   z-index: 1000;
 }
@@ -120,7 +119,7 @@ div.circle-container {
 .category-name:nth-child(10) {
   position: absolute;
   top: 460px;
-  left: 390px;
+  left: 425px;
   font-size: 16px;
   z-index: 1000;
 }
@@ -128,7 +127,7 @@ div.circle-container {
 .category-name:nth-child(11) {
   position: absolute;
   top: 300px;
-  left: 740px;
+  left: 775px;
   font-size: 16px;
   z-index: 1000;
 }
@@ -136,11 +135,15 @@ div.circle-container {
 .category-name:nth-child(12) {
   position: absolute;
   top: 460px;
-  left: 670px;
+  left: 705px;
   font-size: 16px;
   z-index: 1000;
 }
 
 .category-name a {
   color: black;
+}
+
+div#lightbox.lightbox {
+  display: none;
 }

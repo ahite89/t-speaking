@@ -2,16 +2,16 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    if params[:query]
-      @questions = Question.page(params[:page]).per(20).search(params[:query])
-      flash.now[:notice] = @questions.search_message
+    if params[:tag]
+      @questions = Question.tagged_with(params[:tag])
     else
-      @questions = Question.page(params[:page]).per(20).order(:name)
+      @questions = Question.all
     end
   end
 
   def show
     @answer = Answer.new
+    @score = Score.new
     @question = Question.find(params[:id])
   end
 
@@ -25,7 +25,6 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.category = @category
     @question.user = current_user
-    @question.tag_list.add(params["question"]["tag_list"])
 
     if @question.save
       flash[:notice] = "Question added!"
@@ -60,7 +59,9 @@ class QuestionsController < ApplicationController
     redirect_to category_path(@question.category)
   end
 
+  private
+
   def question_params
-    params.require(:question).permit(:title, :description, :score, :audio)
+    params.require(:question).permit(:title, :description, :score, :audio, :tags)
   end
 end

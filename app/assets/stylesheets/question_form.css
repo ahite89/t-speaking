@@ -1,3 +1,59 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
+
 form#new_question.new_question {
   padding-top: 40px;
+}
+
+input#title-field {
+  border-radius: 12px;
+  box-shadow: 10px 10px 5px grey;
+  font-family: "Handlee";
+  font-size: 18px;
+}
+
+textarea#description-field {
+  border-radius: 12px;
+  box-shadow: 10px 10px 5px grey;
+  font-family: "Handlee";
+  font-size: 18px;
+}
+
+input#tag-field {
+  border-radius: 12px;
+  box-shadow: 10px 10px 5px grey;
+  width: 400px;
+  font-family: "Handlee";
+  font-size: 18px;
+}
+
+input#score-field {
+  display: inline;
+  font-family: "Handlee";
+  position: relative;
+  left: -120px;
+  top: 12px;
+}
+
+input#audio-field {
+  display: inline;
+  font-family: "Handlee";
+  position: relative;
+  left: -120px;
+  top: 12px;
+}
+
+label.audio-label {
+  font-family: "Handlee";
+  position: relative;
+  top: 15px;
+  left: -5px;
+  font-size: 18px;
+}
+
+label.score-label {
+  font-family: "Handlee";
+  position: relative;
+  top: 15px;
+  left: -5px;
+  font-size: 18px;
 }

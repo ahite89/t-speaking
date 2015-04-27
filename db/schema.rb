@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422181130) do
+ActiveRecord::Schema.define(version: 20150426222817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,32 +48,24 @@ ActiveRecord::Schema.define(version: 20150422181130) do
     t.string  "audio"
     t.integer "user_id",     null: false
     t.integer "category_id"
+    t.string  "tags"
   end
 
   create_table "scores", force: :cascade do |t|
+    t.string  "first_note"
+    t.string  "second_note"
+    t.integer "question_id"
     t.string  "image"
-    t.integer "question_id", null: false
   end
 
   create_table "taggings", force: :cascade do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context",       limit: 128
-    t.datetime "created_at"
+    t.integer "tag_id",      null: false
+    t.integer "question_id", null: false
   end
-
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: :cascade do |t|
-    t.string  "name"
-    t.integer "taggings_count", default: 0
+    t.string "name", null: false
   end
-
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "upvotes", force: :cascade do |t|
     t.integer "user_id",   null: false
@@ -93,6 +85,7 @@ ActiveRecord::Schema.define(version: 20150422181130) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

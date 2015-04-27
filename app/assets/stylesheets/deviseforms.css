@@ -1,0 +1,51 @@
+fieldset legend#legend {
+  background: none;
+  font-size: 3em;
+  text-align: center;
+  font-family: "Handlee";
+}
+
+.formlabels {
+  font-size: 1.1em;
+  font-family: "Josefin Sans";
+}
+
+
+.formlabels#passwordconfirm-label {
+  font-size: 0.9em;
+}
+
+#password-field {
+  border-radius: 1em;
+  box-shadow: 10px 10px 5px grey;
+}
+
+#email-field {
+  border-radius: 1em;
+  box-shadow: 10px 10px 5px grey;
+}
+
+#username-field {
+  border-radius: 1em;
+  box-shadow: 10px 10px 5px grey;
+}
+
+#password_confirmation-field {
+  border-radius: 1em;
+  box-shadow: 10px 10px 5px grey;
+}
+
+.formlabels#rememberme-label {
+  margin-top: 0.3em;
+  font-size: 0.8em;
+}
+
+#forgotpassword {
+  color: #FFFFFF;
+}
+
+fieldset {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 3em;
+}

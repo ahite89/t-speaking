@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/zurb/foundation-rails.git
+  revision: 88af62be9937955caa3980cbea6314305b55cc25
+  specs:
+    foundation-rails (5.5.1.2)
+      railties (>= 3.1.0)
+      sass (>= 3.3.0, < 3.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -181,9 +189,6 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
-    foundation-rails (5.5.1.2)
-      railties (>= 3.1.0)
-      sass (>= 3.3.0, < 3.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     httparty (0.13.3)
@@ -205,6 +210,8 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    lightbox2-rails (2.7.1)
+      railties (>= 3.1)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -332,12 +339,13 @@ DEPENDENCIES
   devise
   factory_girl
   fog
-  foundation-rails
+  foundation-rails!
   httparty
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
   launchy
+  lightbox2-rails
   pg
   pry
   pry-rails

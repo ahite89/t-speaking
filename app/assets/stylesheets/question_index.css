@@ -1,19 +1,58 @@
 @import url(http://fonts.googleapis.com/css?family=Handlee);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 
-#tag-cloud {
-  width: 230px;
-  line-height: 1.6em;
-  .s { font-size: 0.8em; }
-  .m { font-size: 1.2em; }
-  .l { font-size: 1.8em; }
+div#box {
+  overflow: scroll;
+  height: 400px;
 }
 
 div#questions ul li a {
   font-size: 10px;
+  padding-top: 10px;
 }
 
 div#questions p strong a {
   font-family: 'Handlee';
   font-size: 18px;
   color: #A727FF;
+}
+
+#username {
+  font-family: "Josefin Sans";
+  font-size: 14px;
+}
+
+#no-username {
+  font-family: "Josefin Sans";
+  font-size: 14px;
+}
+
+div#tags {
+  font-family: 'Josefin Sans';
+  border-style: solid;
+  border-color: #4285F4;
+  border-width: 1px;
+  border-radius: 0.75em;
+  padding-left: 3px;
+  padding-right: 3px;
+  display: inline-block;
+  color: #FFFFFF;
+  background-color: #4285F4;
+}
+
+div#cloud {
+  font-family: 'Josefin Sans';
+  border-style: solid;
+  border-color: #4285F4;
+  border-width: 1px;
+  border-radius: 1em;
+  padding-left: 3px;
+  padding-right: 3px;
+  display: inline-block;
+  color: #FFFFFF;
+  background-color: #4285F4;
+}
+
+div#cloud a {
+  color: #FFFFFF;
 }

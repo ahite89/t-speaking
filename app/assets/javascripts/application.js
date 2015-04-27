@@ -13,8 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require_tree .
 //= require jquery.purr
 //= require best_in_place
+//= require lightbox
+//= require_tree .
 
 $(function(){ $(document).foundation(); });

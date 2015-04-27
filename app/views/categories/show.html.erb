@@ -2,25 +2,14 @@
   <div class="large-12 columns">
     <ul class="inline-list">
       <li><h1 class="name"><%= @category.name %></h1></li>
-      <li id="new-question"><%= link_to "New Question", new_category_question_path(@category) %></li>
-      <ul class="left">
-        <li class="has-form">
-          <div class="row collapse">
-            <form id="search_form" action="/categories/<%= @category.id %>" method="get">
-              <div class="row">
-                <div class="large-8 small-9 columns">
-                  <input id="search-bar" type="text" name="query" placeholder="Search Questions">
-                </div>
-                <div class="large-4 small-3 columns">
-                  <input type="submit" value="Search" class="button tiny">
-                </div>
-              </div>
-            </form>
-          </div>
-        </li>
-      </ul>
+      <li><input id="question-new" type="button" value="New Question" method="GET"></li>
+      <li id="curvy-staff"><%= image_tag("curvystaff.jpg") %></li>
     </ul>
   </div>
 </div>
 
-<%= render "questions/question_index" %>
+<div id="form">
+  <%= render "questions/form" %>
+</div>
+
+<%= render "questions/index" %>

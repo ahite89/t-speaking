@@ -3,10 +3,35 @@
 div h1.name {
   font-family: 'Handlee';
   text-align: center;
+  padding-top: 15px;
 }
 
 div li#new-question {
   font-family: 'Handlee';
   padding-top: 25px;
   font-size: 12px;
+}
+
+#form {
+  display: none;
+}
+
+input#question-new {
+  position: absolute;
+  top: 72px;
+  left: 410px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-radius: 1em;
+  background: linear-gradient(to right, purple , #4285F4);
+  color: white;
+}
+
+#curvy-staff img {
+  width: 200px;
+  height: 100px;
+}
+
+div#lightbox.lightbox {
+  display: none;
 }

@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
- *= require tags
+ *= require lightbox
 
  */
  body.home {
@@ -26,7 +26,7 @@
  .top-bar-section li:not(.has-form) a:not(.button),
  .top-bar-section ul li, .top-bar-section .has-form
  {
-   background-color: #FFFFFF;
+   background-color: #FFFAFF;
  }
 
  .top-bar-section ul li > a {

@@ -1,5 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Handlee);
 
+body#question-show {
+  background-image: url("");
+}
+
 div#question-description h6 {
   font-family: 'Handlee';
 }
@@ -8,31 +12,36 @@ div#question-title h3 {
   font-family: 'Handlee';
 }
 
-div#score {
+div.note img {
+  height: 62px;
+  width: 62px;
+}
+
+img#score {
   width: 6em;
   height: 6em;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: inline-block;
   border-style: solid;
   border-color: black;
-  border-radius: 0.5em
+  border-radius: 0.5em;
+  overflow: scroll;
+  position: absolute;
+  box-shadow: 10px 10px 5px grey;
+}
+
+div#staff img {
+  height: 180px;
+  width: 500px;
+  padding-top: 50px;
+}
+
+div#staff {
+  left: 240px;
 }
 
 audio {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 100px;
-}
-
-#popup {
-  height: 600px;
-  width: 600px;
-  display: none;
-  left: 190px;
-  bottom: -270px;
-  position: absolute;
-  z-index: 1000;
+  padding-top: 75px;
+  right: 200px;
 }
 
 div.answers span a {
@@ -53,19 +62,248 @@ div#answer-form {
   padding-top: 3em;
 }
 
-div.panel {
-  padding-top: 1em;
-  width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+#useranswer {
+  font-family: "Josefin Sans";
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+#no-useranswer {
+  font-family: "Josefin Sans";
+  font-size: 14px;
+  padding-top: 10px;
 }
 
 div#flat a img {
   width: 20px;
   height: 20px;
+  position: relative;
+  right: 5px;
 }
 
 div#sharp a img {
   width: 20px;
   height: 20px;
+  position: relative;
+  right: 5px;
+}
+
+div img.flat {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  left: 23px;
+  top: 13px;
+}
+
+div img.sharp {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  left: 23px;
+  top: 16px;
+}
+
+#C1 {
+  position: absolute;
+  left: 480px;
+  top: 438px;
+}
+
+#Csharp1 {
+  position: absolute;
+  left: 440px;
+  top: 438px;
+}
+
+#Dflat1 {
+  position: absolute;
+  left: 445px;
+  top: 484px;
+}
+
+#D1 {
+  position: absolute;
+  left: 480px;
+  top: 484px;
+}
+
+#Dsharp1 {
+  position: absolute;
+  left: 440px;
+  top: 484px;
+}
+
+#Eflat1 {
+  position: absolute;
+  left: 445px;
+  top: 477px;
+}
+
+#E1 {
+  position: absolute;
+  left: 480px;
+  top: 477px;
+}
+
+#F1 {
+  position: absolute;
+  left: 480px;
+  top: 470px;
+}
+
+#Fsharp1 {
+  position: absolute;
+  left: 440px;
+  top: 470px;
+}
+
+#Gflat1 {
+  position: absolute;
+  left: 445px;
+  top: 462px;
+}
+
+#G1 {
+  position: absolute;
+  left: 480px;
+  top: 462px;
+}
+
+#Gsharp1 {
+  position: absolute;
+  left: 440px;
+  top: 462px;
+}
+
+#Aflat1 {
+  position: absolute;
+  left: 445px;
+  top: 454px;
+}
+
+#A1 {
+  position: absolute;
+  left: 480px;
+  top: 454px;
+}
+
+#Asharp1 {
+  position: absolute;
+  left: 440px;
+  top: 454px;
+}
+
+#Bflat1 {
+  position: absolute;
+  left: 445px;
+  top: 445px;
+}
+
+#B1 {
+  position: absolute;
+  left: 480px;
+  top: 445px;
+}
+
+#C2 {
+  position: absolute;
+  left: 655px;
+  top: 438px;
+}
+
+#Csharp2 {
+  position: absolute;
+  left: 615px;
+  top: 438px;
+}
+
+#Dflat2 {
+  position: absolute;
+  left: 620px;
+  top: 484px;
+}
+
+#D2 {
+  position: absolute;
+  left: 655px;
+  top: 484px;
+}
+
+#Dsharp2 {
+  position: absolute;
+  left: 615px;
+  top: 484px;
+}
+
+#Eflat2 {
+  position: absolute;
+  left: 620px;
+  top: 477px;
+}
+
+#E2 {
+  position: absolute;
+  left: 655px;
+  top: 477px;
+}
+
+#F2 {
+  position: absolute;
+  left: 655px;
+  top: 470px;
+}
+
+#Fsharp2 {
+  position: absolute;
+  left: 615px;
+  top: 470px;
+}
+
+#Gflat2 {
+  position: absolute;
+  left: 620px;
+  top: 462px;
+}
+
+#G2 {
+  position: absolute;
+  left: 655px;
+  top: 462px;
+}
+
+#Gsharp2 {
+  position: absolute;
+  left: 615px;
+  top: 462px;
+}
+
+#Aflat2 {
+  position: absolute;
+  left: 620px;
+  top: 454px;
+}
+
+#A2 {
+  position: absolute;
+  left: 655px;
+  top: 454px;
+}
+
+#Asharp2 {
+  position: absolute;
+  left: 615px;
+  top: 454px;
+}
+
+#Bflat2 {
+  position: absolute;
+  left: 620px;
+  top: 445px;
+}
+
+#B2 {
+  position: absolute;
+  left: 655px;
+  top: 445px;
 }

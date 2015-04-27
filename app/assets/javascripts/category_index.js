@@ -45,7 +45,7 @@ $(document).ready(function(){
   }, function() {
     $('.category-name:nth-child(5)').removeClass('transition');
   });
-});s
+});
 
 $(document).ready(function(){
   $('.category-name:nth-child(6)').hover(function() {

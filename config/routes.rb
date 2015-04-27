@@ -8,11 +8,12 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index, :show, :edit, :update] do
     resources :questions, only: [:new, :create, :edit, :update]
+    resources :tags, only: [:new, :create]
   end
 
   resources :questions, only: [:new, :show, :edit, :update, :destroy] do
     resources :answers, except: [:index, :show]
-    resources :scores, only: [:index, :show]
+    resources :scores, only: [:new, :create]
   end
 
   resources :answers do
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :scores, only: [:destroy]
 
   resources :chords, only: [:index]
 end

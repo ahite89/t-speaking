@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="large-3 columns ">
+    <div>
+      <% @questions.each do |question| %>
+        <% if question.tags == nil %>
+          <div id="no-tag"></div>
+        <% else %>
+          <div id="cloud"><%= question.tags %></div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="large-7 columns" id="box">
+    <% @questions.each do |question| %>
+      <div class="large-2 columns small-3"><%= image_tag("bass.png") %></div>
+        <div class="large-10 columns" id="questions">
+          <p><strong><%= link_to question.title, question_path(question) %></strong></p>
+          <% if question.user.username == nil %>
+            <div id="no-username">asked by anonymous at <%= question.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
+          <% else %>
+            <div id="username">asked by <%= question.user.username %> at <%= question.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
+          <% end %>
+          <% if question.tags == nil %>
+            <div id="no-tag"></div>
+          <% else %>
+            <div id="tags"><%= question.tags %></div>
+          <% end %>
+          <ul class="inline-list">
+            <li><%= link_to "edit", edit_question_path(question) %></li>
+            <li><%= link_to "delete", question_path(question), method: :delete %></li>
+          </ul>
+        </div>
+        <hr/>
+      <% end %>
+    </div>
+    <hr/>
+  </div>
+</div>

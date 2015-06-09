@@ -11,7 +11,6 @@ class QuestionsController < ApplicationController
 
   def show
     @answer = Answer.new
-    @score = Score.new
     @question = Question.find(params[:id])
   end
 
@@ -62,6 +61,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, :description, :score, :audio, :tags)
+    params.require(:question).permit(:title, :description, :audio, :tags)
   end
 end

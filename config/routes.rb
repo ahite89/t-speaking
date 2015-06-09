@@ -13,7 +13,6 @@ Rails.application.routes.draw do
 
   resources :questions, only: [:new, :show, :edit, :update, :destroy] do
     resources :answers, except: [:index, :show]
-    resources :scores, only: [:new, :create]
   end
 
   resources :answers do
@@ -22,8 +21,6 @@ Rails.application.routes.draw do
       put "dislike", to: "answers#downvote"
     end
   end
-
-  resources :scores, only: [:destroy]
 
   resources :chords, only: [:index]
 end

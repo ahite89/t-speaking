@@ -4,7 +4,7 @@ class Question < ActiveRecord::Base
   mount_uploader :audio, AudioUploader
 
   has_many :answers
-  has_many :scores
+  has_many :symbols
 
   belongs_to :user
   belongs_to :category

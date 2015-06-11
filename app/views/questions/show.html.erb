@@ -1,68 +1,78 @@
-<body id="question-show">
-  <div class="row">
-    <div class="large-12 columns" id="question-title">
-      <h3><%= @question.title %></h3><br>
-    </div>
+<div class="row">
+  <div class="large-12 columns" id="question-title">
+    <h3><%= @question.title %></h3><br>
   </div>
+</div>
 
-  <div class="row">
-    <div class="large-12 columns" id="question-description">
+<div class="row">
+  <div class="large-12 columns" id="question-description">
+    <div class="panel">
       <h6><%= @question.description %></h6>
     </div>
   </div>
+</div>
 
-  <div class="row">
-    <div class="large-6 columns">
-      <a class="lightbox" href="<%= @question.score %>" data-lightbox="clef">
-        <img id="score" src="<%= @question.score %>" />
-      </a>
-    </div>
-    <div class="large-6 columns">
-      <audio controls>
-        <source src="<%= @question.audio %>">
-      </audio>
-    </div>
+<div class="row">
+  <div class="large-6 columns">
+    <a class="lightbox" href="<%= @question.score %>" data-lightbox="clef">
+      <img id="score" src="<%= @question.score %>" />
+    </a>
   </div>
 
-  <div class="row">
-    <div class="symbols">
-      <div class="large-12 columns" id="staff">
-        <%= image_tag("blankstaff.jpg") %>
+  <div class="large-6 columns">
+    <audio controls>
+      <source src="<%= @question.audio %>">
+    </audio>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns" id="staff">
+    <%= image_tag("blankstaff.jpg") %>
+  </div>
+</div>
+
+<div class="row">
+  <p id="instructions">Click to add a symbol, then drag and drop onto the staff! To remove, simply double click. </p>
+</div>
+
+<div class="row">
+  <div class="symbols">
+    <div id="quarter">&#9833;</div>
+    <div id="eighth">&#9834;</div>
+    <div id="flat2">&#9837;</div>
+    <div id="sharp2">&#9839;</div>
+    <div id="natural">&#9838;</div>
+    <div id="g-clef">&#119070;</div>
+    <div id="bass-clef">&#119074;</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns" id="answer-form">
+    <%= render "answers/form" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+      <div class="answers">
+        <% @question.answers.each do |answer| %>
+          <div>
+            <div id="sharp"><%= link_to image_tag("sharp.gif"), like_answer_path(answer), method: :put %></div>
+              <%= answer.score %>
+              <%= best_in_place answer, :content, type: :textarea %> <span><%= link_to "delete", answer_path(answer), method: :delete %><span>
+            <div id="flat"><%= link_to image_tag("flat.png"), dislike_answer_path(answer), method: :put %></div>
+            <% if answer.user.username == nil %>
+              <div id="no-useranswer">theorized by anonymous on <%= answer.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
+            <% else %>
+              <div id="useranswer">theorized by <%= answer.user.username %> on <%= answer.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
+            <% end %>
+            <hr/>
+          </div>
+        <% end %>
       </div>
-      <div id="quarter">&#9833;</div>
-      <div id="eighth">&#9834;</div>
-      <div id="flat2">&#9837;</div>
-      <div id="sharp2">&#9839;</div>
-      <div id="natural">&#9838;</div>
-      <div id="g-clef">&#119070;</div>
-      <div id="bass-clef">&#119074;</div>
-    </div>
   </div>
+</div>
 
-  <div class="row">
-    <div class="large-12 columns" id="answer-form">
-      <%= render "answers/form" %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="large-12 columns">
-        <div class="answers">
-          <% @question.answers.each do |answer| %>
-            <div>
-              <div id="sharp"><%= link_to image_tag("sharp.gif"), like_answer_path(answer), method: :put %></div>
-                <%= answer.score %>
-                <%= best_in_place answer, :content, type: :textarea %> <span><%= link_to "delete", answer_path(answer), method: :delete %><span>
-              <div id="flat"><%= link_to image_tag("flat.png"), dislike_answer_path(answer), method: :put %></div>
-              <% if answer.user.username == nil %>
-                <div id="no-useranswer">theorized by anonymous on <%= answer.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
-              <% else %>
-                <div id="useranswer">theorized by <%= answer.user.username %> on <%= answer.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
-              <% end %>
-              <hr/>
-            </div>
-          <% end %>
-        </div>
-    </div>
-  </div>
-</body>
+<div id="question-id"><%= @question.id %></div>

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :questions, only: [:new, :show, :edit, :update, :destroy] do
     resources :answers, except: [:index, :show]
+    resources :symbols
   end
 
   resources :answers do

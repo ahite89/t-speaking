@@ -48,6 +48,11 @@ div#tags {
   background-color: #4285F4;
 }
 
+div#category-list {
+  font-family: 'Handlee';
+  font-size: 16px;
+}
+
 div#cloud {
   font-family: 'Josefin Sans';
   border-style: solid;

@@ -2,8 +2,8 @@ var questionId = $('#question-id').html();
 var ajaxUrl = '/questions/' + questionId + '/symbols';
 
 $('#quarter').click(function() {
-    var newSymbol = "&#9833";
-    $('.symbols').append('<div class="quarters">' + newSymbol +'</div>');
+    var newSymbol = ("<div class='quarters'>&#9833</div>")
+    $('#new-notes').innerHTML = newSymbol;
     $('.quarters').draggable({
         start: function(event, ui) {
         	var startPos = $(this).position();

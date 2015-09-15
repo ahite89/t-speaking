@@ -7,6 +7,6 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @questions = @category.questions
     @question = Question.new
-    @categories = Category.all
+    @categories = Category.all #except for current category
   end
 end

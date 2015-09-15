@@ -9,11 +9,13 @@
         <% end %>
       <% end %>
     </div>!-->
-    <% @categories.each do |category| %>
-    <ul>
-      <div id="category-list"><%= category.name %></div>
-    </ul>
-    <% end %>
+    <div id="other_categories">
+      <% @categories.each do |category| %>
+      <ul>
+        <div id="category-list"><%= link_to category.name, category_path(category) %></div>
+      </ul>
+      <% end %>
+    </div>
   </div>
 
   <div class="large-7 columns" id="box">
@@ -25,11 +27,6 @@
             <div id="no-username">asked by anonymous on <%= question.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
           <% else %>
             <div id="username">asked by <%= question.user.username %> on <%= question.user.created_at.to_s.gsub(/[UTC]/, '') %></div>
-          <% end %>
-          <% if question.tags == nil %>
-            <div id="no-tag"></div>
-          <% else %>
-            <div id="tags"><%= question.tags %></div>
           <% end %>
           <ul class="inline-list">
             <li><%= link_to "edit", edit_question_path(question) %></li>

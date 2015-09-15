@@ -5,7 +5,7 @@
 }
 
 div#question-description h6 {
-  font-family: 'Handlee';
+  font-family: 'Josefin Sans';
 }
 
 div#question-title h3 {
@@ -34,6 +34,7 @@ div#staff img {
 
 div#staff {
   left: 50px;
+  z-index: 0;
 }
 
 #instructions {
@@ -43,10 +44,6 @@ div#staff {
 
 .symbols {
   text-align: center;
-}
-
-.panel {
-  opacity: 0.5;
 }
 
 #quarter {
@@ -115,14 +112,18 @@ div#staff {
   border-radius: 10em;
 }
 
+#new-notes {
+  height: 3em;
+}
+
 .quarters {
   font-size: 53px;
-  display: inline-block;
+  display: block;
 }
 
 .eighths {
   font-size: 65px;
-  display: inline-block;
+  z-index: 1000;
 }
 
 .sharps {

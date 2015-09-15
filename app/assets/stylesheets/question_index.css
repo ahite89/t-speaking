@@ -6,12 +6,6 @@ div#box {
   height: 400px;
 }
 
-.falling-notes {
-  position: absolute;
-  left: 900px;
-  top: -70px;
-}
-
 div#questions ul li a {
   font-size: 10px;
   padding-top: 10px;
@@ -48,9 +42,10 @@ div#tags {
   background-color: #4285F4;
 }
 
-div#category-list {
+div#category-list a {
   font-family: 'Handlee';
   font-size: 16px;
+  color: black;
 }
 
 div#cloud {

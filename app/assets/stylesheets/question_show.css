@@ -34,7 +34,6 @@ div#staff img {
 
 div#staff {
   left: 50px;
-  z-index: 0;
 }
 
 #instructions {
@@ -64,7 +63,7 @@ div#staff {
   padding-right: 5px;
 }
 
-#sharp2 {
+#sharp {
   font-size: 20px;
   border-style: solid;
   border-width: 2px;
@@ -74,7 +73,7 @@ div#staff {
   padding-right: 5px;
 }
 
-#flat2 {
+#flat {
   font-size: 20px;
   border-style: solid;
   border-width: 2px;
@@ -114,6 +113,12 @@ div#staff {
 
 #new-notes {
   height: 3em;
+  z-index: 100;
+  position: absolute;
+}
+
+#note-container {
+  position: relative;
 }
 
 .quarters {
@@ -190,14 +195,14 @@ div#answer-form {
   padding-top: 10px;
 }
 
-div#flat a img {
+div#flat2 a img {
   width: 20px;
   height: 20px;
   position: relative;
   right: 5px;
 }
 
-div#sharp a img {
+div#sharp2 a img {
   width: 20px;
   height: 20px;
   position: relative;

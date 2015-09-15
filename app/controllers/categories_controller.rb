@@ -7,6 +7,6 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @questions = @category.questions
     @question = Question.new
-    @categories = Category.all #except for current category
+    @categories = Category.where.not(id: @category.id)
   end
 end

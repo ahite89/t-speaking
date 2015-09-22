@@ -15,13 +15,20 @@
 #title-2 {
   font-family: 'Dancing Script';
   position: relative;
-  left: 400px;
-  bottom: 350px;
+  left: 870px;
+  bottom: 150px;
   font-size: 40px;
   color: linear-gradient(to right, purple , #4285F4);
   background: linear-gradient(330deg, #e05252 0%, purple 25%, #4285F4 50%, #9952e0 75%, #4285F4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+#sub-title {
+  font-family: 'Josefin Sans';
+  font-size: 22px;
+  text-align: center;
+  padding-bottom: 80px;
 }
 
 .category-name {
@@ -45,30 +52,10 @@ div.row h6 {
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-div#logo a {
+div#logo {
   margin-left: 375px;
   position: relative;
   bottom: 163px;
-}
-
-div#logo a:hover + #information{
-  display: block;
-}
-
-#information{
-  display: none;
-  position: absolute;
-  left: 445px;
-  bottom: 150px;
-  width: 140px;
-  height: 25px;
-  font-size: 12px;
-  background-color: white;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  padding-top: 3px;
-  padding-left: 6px;
 }
 
 div.circle-container {

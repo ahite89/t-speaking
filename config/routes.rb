@@ -22,6 +22,4 @@ Rails.application.routes.draw do
       put "dislike", to: "answers#downvote"
     end
   end
-
-  resources :chords, only: [:index]
 end

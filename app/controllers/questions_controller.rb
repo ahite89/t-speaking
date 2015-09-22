@@ -61,6 +61,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, :description, :audio, :tags)
+    params.require(:question).permit(:title, :description, :audio)
   end
 end

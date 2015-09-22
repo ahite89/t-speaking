@@ -7,7 +7,6 @@ class SymbolsController < ApplicationController
       format.js do
         @question = Question.find(params[:question_id])
         @symbol = @question.symbols.create(symbol_params)
-        binding.pry
       end
     end
   end

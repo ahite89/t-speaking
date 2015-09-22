@@ -37,7 +37,7 @@ $(document).ready(function() {
       });
   });
 
-  $('#quarter').hover(
+  $('.all-symbols').hover(
     function(){
         $(this).addClass('border');
     },

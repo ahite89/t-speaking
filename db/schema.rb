@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611034922) do
+ActiveRecord::Schema.define(version: 20150922035508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,12 +28,6 @@ ActiveRecord::Schema.define(version: 20150611034922) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
-  end
-
-  create_table "chords", force: :cascade do |t|
-    t.string  "first_chord"
-    t.float   "first_chord_probability"
-    t.integer "category_id"
   end
 
   create_table "downvotes", force: :cascade do |t|
@@ -63,15 +57,6 @@ ActiveRecord::Schema.define(version: 20150611034922) do
     t.float   "left",        null: false
     t.float   "top",         null: false
     t.integer "question_id", null: false
-  end
-
-  create_table "taggings", force: :cascade do |t|
-    t.integer "tag_id",      null: false
-    t.integer "question_id", null: false
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string "name", null: false
   end
 
   create_table "upvotes", force: :cascade do |t|

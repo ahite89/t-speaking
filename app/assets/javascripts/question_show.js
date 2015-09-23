@@ -1,5 +1,5 @@
-var questionId = $('#question-id').html();
-var ajaxUrl = '/questions/' + questionId + '/symbols';
+//var questionId = $('#question-id').html();
+//var ajaxUrl = '/questions/' + questionId + '/symbols';
 
 $(document).ready(function() {
   // var quarter = ('<div class="quarters">' + '&#9833' +'</div>');
@@ -9,42 +9,47 @@ $(document).ready(function() {
   // var natural = ('<div class="naturals">' + '&#9838' + '</div>');
   // var gClef = ('<div class="g-clefs">' + '&#119070' + '</div>');
   // var bassClef = ('<div class="bass-clefs">' + '&#119074' + '</div>');
-  var noteZIndex = 0
+  //var noteZIndex = 0
 
-  $('.all-symbols').click(function() {
-    id = ('#' + this.id);
-    noteClass = this.id + 's'
-    note = $(this).html();
-      $('#new-notes').append('<div class="' + noteClass + '" style="z-index: ' + (noteZIndex + 1) + '">' + note +'</div>');
-      $('.' + noteClass).draggable({
-          start: function(event, ui) {
-          	var startPos = $(this).position();
-          	$("div#start").text("START: \nLeft: "+ startPos.left + "\nTop: " + startPos.top);
-          },
-          stop: function(event, ui) {
-          	var stopPos = $(this).position();
-            $.ajax({
-                data: stopPos,
-                method: 'POST',
-                url: ajaxUrl
-            });
-          	$("div#stop").text("STOP: \nLeft: "+ stopPos.left + "\nTop: " + stopPos.top);
-            noteZIndex = noteZIndex + 1;
-          }
-        });
-      $('.' + noteClass).dblclick(function() {
-          $(this).fadeOut(10);
-      });
-  });
-
-  $('.all-symbols').hover(
+  //$('.symbols').click(function() {
+    //id = ('#' + this.id);
+    //noteClass = this.id + 's'
+    //note = $(this).html();
+      //$('#new-notes').append('<div class="' + noteClass + '" style="z-index: ' + (noteZIndex + 1) + '">' + note +'</div>');
+      //$('.' + noteClass).draggable({
+        //  start: function(event, ui) {
+          //	var startPos = $(this).position();
+          //	$("div#start").text("START: \nLeft: "+ startPos.left + "\nTop: " + startPos.top);
+          //},
+          //stop: function(event, ui) {
+          	//var stopPos = $(this).position();
+            //$.ajax({
+                //data: stopPos,
+                //method: 'POST',
+                //url: ajaxUrl
+            //});
+          	//$("div#stop").text("STOP: \nLeft: "+ stopPos.left + "\nTop: " + stopPos.top);
+            //noteZIndex = noteZIndex + 1;
+          //}
+        //});
+      //$('.' + noteClass).dblclick(function() {
+          //$(this).fadeOut(10);
+      //});
+  //});
+  $('.symbols').hover(
     function(){
         $(this).addClass('border');
     },
     function(){
         $(this).removeClass('border')
   });
-})
+
+  $('.symbols').dblclick(function() {
+    if (ui.draggable.hasClass("dropped"))
+      $(this).fadeOut(10);
+  });
+
+});
 
 // $('#eighth').click(function() {
 //     var newSymbol = "&#9834";
@@ -147,3 +152,21 @@ $(document).ready(function() {
 //   function(){
 //       $(this).removeClass('border')
 // });
+$(function() {
+    $(".symbols").draggable({
+        helper: function() {
+            return $(this).clone().appendTo('#staff').css({
+                'zIndex': 5
+            });
+        },
+        cursor: 'move',
+    });
+
+    $('#staff').droppable({
+        accept: '.symbols',
+        drop: function(event, ui) {
+            if (!ui.draggable.hasClass("dropped"))
+                $(this).append($(ui.draggable).clone().addClass("dropped").draggable());
+            }
+        });
+    });

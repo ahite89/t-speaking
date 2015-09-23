@@ -34,6 +34,7 @@ div#staff img {
 
 div#staff {
   left: 50px;
+  z-index: 0;
 }
 
 #instructions {
@@ -41,80 +42,18 @@ div#staff {
   text-align: center;
 }
 
-.symbols {
+.all-symbols {
   text-align: center;
+  font-size: 20px;
+  z-index: 10;
 }
 
-#quarter {
-  font-size: 20px;
-  border-style: solid;
-  border-width: 2px;
-  display: inline-block;
-  border-radius: 10em;
-}
-
-#eighth {
-  font-size: 20px;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 10em;
-  display: inline-block;
+.symbols {
+  border: 2px solid black;
+  border-radius: 5em;
   padding-left: 5px;
   padding-right: 5px;
-}
-
-#sharp {
-  font-size: 20px;
-  border-style: solid;
-  border-width: 2px;
   display: inline-block;
-  border-radius: 10em;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#flat {
-  font-size: 20px;
-  border-style: solid;
-  border-width: 2px;
-  display: inline-block;
-  border-radius: 10em;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#bass-clef {
-  font-size: 20px;
-  border-style: solid;
-  border-width: 2px;
-  display: inline-block;
-  border-radius: 10em;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#g-clef {
-  font-size: 20px;
-  border-style: solid;
-  border-width: 2px;
-  display: inline-block;
-  border-radius: 10em;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-#natural {
-  font-size: 20px;
-  border-style: solid;
-  border-width: 2px;
-  display: inline-block;
-  border-radius: 10em;
-}
-
-#new-notes {
-  height: 3em;
-  z-index: 100;
-  position: absolute;
 }
 
 #note-container {
@@ -123,12 +62,12 @@ div#staff {
 
 .quarters {
   font-size: 53px;
-  display: block;
+  display: inline-block;
 }
 
 .eighths {
   font-size: 65px;
-  z-index: 1000;
+  display: inline-block;
 }
 
 .sharps {

@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get 'tags/:tag', to: 'categories#show', as: :tag
-
   root 'categories#index'
 
   resources :categories, only: [:index, :show, :edit, :update] do

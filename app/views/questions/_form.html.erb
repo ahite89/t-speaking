@@ -46,24 +46,14 @@
               <div class="small-6 columns">
                 <%= f.file_field :score, id: "score-field" %>
               </div>
+                <%= f.submit "Add Question", id: "submit-button", class: "button small radius" %>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="small-4 columns">
-          <div class="row">
-            <div class="small-3 columns">
-            </div>
-            <div class="small-9 columns">
-              <%= f.text_field :tags, id: "tag-field", placeholder: "Tags (separated by commas)"%><br>
-            </div>
-          </div>
-        </div>
-        <div class="small-5 columns">
+        <div class="large-5 columns">
           <div class="row">
             <div class="small-6 columns">
-              <%= f.submit "Add Question", id: "submit-button", class: "button small radius" %>
             </div>
           </div>
         </div>

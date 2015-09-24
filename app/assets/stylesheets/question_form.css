@@ -4,6 +4,15 @@ form#new_question.new_question {
   padding-top: 40px;
 }
 
+input#submit-button {
+  border-style: solid;
+  border-color: #FFFFFF;
+  background-color: #4285F4;
+  color: white;
+  padding-top: 12px;
+  background: linear-gradient(to left, purple , #4285F4);
+}
+
 input#title-field {
   border-radius: 12px;
   box-shadow: 10px 10px 5px grey;
@@ -14,14 +23,6 @@ input#title-field {
 textarea#description-field {
   border-radius: 12px;
   box-shadow: 10px 10px 5px grey;
-  font-family: "Handlee";
-  font-size: 18px;
-}
-
-input#tag-field {
-  border-radius: 12px;
-  box-shadow: 10px 10px 5px grey;
-  width: 400px;
   font-family: "Handlee";
   font-size: 18px;
 }

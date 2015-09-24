@@ -20,47 +20,15 @@ div#questions p strong a {
 #username {
   font-family: "Josefin Sans";
   font-size: 14px;
-  padding-bottom: 5px;
 }
 
 #no-username {
   font-family: "Josefin Sans";
   font-size: 14px;
-  padding-bottom: 5px;
-}
-
-div#tags {
-  font-family: 'Josefin Sans';
-  border-style: solid;
-  border-color: #4285F4;
-  border-width: 1px;
-  border-radius: 0.75em;
-  padding-left: 3px;
-  padding-right: 3px;
-  display: inline-block;
-  color: #FFFFFF;
-  background-color: #4285F4;
 }
 
 div#category-list a {
   font-family: 'Handlee';
   font-size: 16px;
   color: black;
-}
-
-div#cloud {
-  font-family: 'Josefin Sans';
-  border-style: solid;
-  border-color: #4285F4;
-  border-width: 1px;
-  border-radius: 1em;
-  padding-left: 3px;
-  padding-right: 3px;
-  display: inline-block;
-  color: #FFFFFF;
-  background-color: #4285F4;
-}
-
-div#cloud a {
-  color: #FFFFFF;
 }

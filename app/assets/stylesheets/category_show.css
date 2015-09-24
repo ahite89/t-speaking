@@ -16,7 +16,7 @@ div li#new-question {
   display: none;
 }
 
-input#question-new {
+#question-new {
   position: absolute;
   top: 72px;
   left: 410px;

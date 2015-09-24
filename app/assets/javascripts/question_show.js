@@ -44,11 +44,6 @@ $(document).ready(function() {
         $(this).removeClass('border')
   });
 
-  $('.symbols').dblclick(function() {
-    if (ui.draggable.hasClass("dropped"))
-      $(this).fadeOut(10);
-  });
-
 });
 
 // $('#eighth').click(function() {
@@ -169,4 +164,9 @@ $(function() {
                 $(this).append($(ui.draggable).clone().addClass("dropped").draggable());
             }
         });
+    });
+
+    $('.symbols').dblclick(function() {
+      if (ui.draggable.hasClass("dropped"))
+        $(this).fadeOut(10);
     });

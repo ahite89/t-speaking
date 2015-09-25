@@ -1,7 +1,6 @@
 //var questionId = $('#question-id').html();
 //var ajaxUrl = '/questions/' + questionId + '/symbols';
 
-$(document).ready(function() {
   // var quarter = ('<div class="quarters">' + '&#9833' +'</div>');
   // var eighth = ('<div class="eighths">' + '&#9834' + '</div>');
   // var sharp = ('<div class="sharps">' + '&#9839' + '</div>');
@@ -36,15 +35,6 @@ $(document).ready(function() {
           //$(this).fadeOut(10);
       //});
   //});
-  $('.symbols').hover(
-    function(){
-        $(this).addClass('border');
-    },
-    function(){
-        $(this).removeClass('border')
-  });
-
-});
 
 // $('#eighth').click(function() {
 //     var newSymbol = "&#9834";
@@ -147,26 +137,31 @@ $(document).ready(function() {
 //   function(){
 //       $(this).removeClass('border')
 // });
-$(function() {
-    $(".symbols").draggable({
-        helper: function() {
-            return $(this).clone().appendTo('#staff').css({
-                'zIndex': 5
-            });
-        },
-        cursor: 'move',
-    });
-
-    $('#staff').droppable({
+$(document).ready(function() {
+    $("#staff").droppable({
         accept: '.symbols',
         drop: function(event, ui) {
-            if (!ui.draggable.hasClass("dropped"))
-                $(this).append($(ui.draggable).clone().addClass("dropped").draggable());
-            }
-        });
+            $(this).append($(ui.helper).clone());
+            $("#staff .symbols").addClass("item");
+            $(".item").removeClass("ui-draggable symbols");
+            $(".item").draggable({
+            });
+        }
+    });
+    $(".symbols").draggable({
+        helper: 'clone'
+    });
+});
+
+    $('.symbols').hover(
+      function(){
+          $(this).addClass('border');
+      },
+      function(){
+          $(this).removeClass('border')
     });
 
-    $('.symbols').dblclick(function() {
-      if (ui.draggable.hasClass("dropped"))
-        $(this).fadeOut(10);
-    });
+
+  $('.ui-draggable-handle.border.item.ui-draggable').dblclick(function() {
+      $(this).fadeOut(10);
+  });

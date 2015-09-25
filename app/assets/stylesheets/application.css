@@ -46,3 +46,7 @@
    display: inline-block;
    text-align: center;
  }
+
+ footer {
+   z-index: 0;
+ }

@@ -1,6 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Handlee);
 
-.large-12.columns .large-6.columns .row {
+.row {
+  z-index: 0;
+}
+
+.large-12.columns {
+  z-index: 0;
+}
+
+footer {
   z-index: 0;
 }
 
@@ -142,6 +150,10 @@ div#question-description {
 
 div#answer-form {
   padding-top: 3em;
+  z-index: 0;
+}
+
+#new_answer {
   z-index: 0;
 }
 

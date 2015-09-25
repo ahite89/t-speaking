@@ -151,6 +151,10 @@ $(document).ready(function() {
     $(".symbols").draggable({
         helper: 'clone'
     });
+
+    $('.ui-draggable-handle.border.item.ui-draggable').dblclick(function() {
+        $(this).fadeOut(10);
+    });
 });
 
     $('.symbols').hover(
@@ -160,8 +164,3 @@ $(document).ready(function() {
       function(){
           $(this).removeClass('border')
     });
-
-
-  $('.ui-draggable-handle.border.item.ui-draggable').dblclick(function() {
-      $(this).fadeOut(10);
-  });

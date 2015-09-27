@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index, :show, :edit, :update] do
     resources :questions, only: [:new, :create, :edit, :update]
-    resources :tags, only: [:new, :create]
   end
 
   resources :questions, only: [:new, :show, :edit, :update, :destroy] do

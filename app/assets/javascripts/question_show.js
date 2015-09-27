@@ -16,18 +16,6 @@
     //note = $(this).html();
       //$('#new-notes').append('<div class="' + noteClass + '" style="z-index: ' + (noteZIndex + 1) + '">' + note +'</div>');
       //$('.' + noteClass).draggable({
-        //  start: function(event, ui) {
-          //	var startPos = $(this).position();
-          //	$("div#start").text("START: \nLeft: "+ startPos.left + "\nTop: " + startPos.top);
-          //},
-          //stop: function(event, ui) {
-          	//var stopPos = $(this).position();
-            //$.ajax({
-                //data: stopPos,
-                //method: 'POST',
-                //url: ajaxUrl
-            //});
-          	//$("div#stop").text("STOP: \nLeft: "+ stopPos.left + "\nTop: " + stopPos.top);
             //noteZIndex = noteZIndex + 1;
           //}
         //});
@@ -138,29 +126,42 @@
 //       $(this).removeClass('border')
 // });
 $(document).ready(function() {
-    $("#staff").droppable({
-        accept: '.symbols',
-        drop: function(event, ui) {
-            $(this).append($(ui.helper).clone());
-            $("#staff .symbols").addClass("item");
-            $(".item").removeClass("ui-draggable symbols");
-            $(".item").draggable({
-            });
-        }
-    });
-    $(".symbols").draggable({
-        helper: 'clone'
-    });
+  $("#staff").droppable({
+      accept: '.symbols',
+      drop: function(event, ui) {
+          $(this).append($(ui.helper).clone());
+          $("#staff .symbols").addClass("item");
+          $(".item").removeClass("ui-draggable symbols");
+          $(".item").draggable({
+          });
+      }
+  });
+  $(".symbols").draggable({
+      helper: 'clone'
+  });
 
-    $('.ui-draggable-handle.border.item.ui-draggable').dblclick(function() {
-        $(this).fadeOut(10);
-    });
+  start: function(event, ui) {
+     var startPos = $(this).position();
+     $("div#start").text("START: \nLeft: "+ startPos.left + "\nTop: " + startPos.top);
+   },
+   stop: function(event, ui) {
+     var stopPos = $(this).position();
+     $.ajax({
+         data: stopPos,
+         method: 'POST',
+         url: ajaxUrl
+     });
+     $("div#stop").text("STOP: \nLeft: "+ stopPos.left + "\nTop: " + stopPos.top);
+
+  $('.ui-draggable-handle.border.item.ui-draggable').dblclick(function() {
+      $(this).fadeOut(10);
+  });
+
+  $('.symbols').hover(
+    function(){
+        $(this).addClass('border');
+    },
+    function(){
+        $(this).removeClass('border')
+  });
 });
-
-    $('.symbols').hover(
-      function(){
-          $(this).addClass('border');
-      },
-      function(){
-          $(this).removeClass('border')
-    });

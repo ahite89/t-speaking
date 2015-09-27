@@ -84,11 +84,6 @@ div#staff {
   position: relative;
 }
 
-#new-notes {
-  border: 1px solid black;
-  height: 100px;
-}
-
 .quarters {
   font-size: 53px;
   display: inline-block;
